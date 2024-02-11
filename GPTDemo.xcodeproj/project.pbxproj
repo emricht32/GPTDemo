@@ -123,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				40291C892B784B3500E6D451 /* GPTDemoTests.swift */,
+				<#FileReferenceForGPTDemoAppTests.swift#>,
+				<#FileReferenceForContentViewTests.swift#>,
 			);
 			path = GPTDemoTests;
 			sourceTree = "<group>";
