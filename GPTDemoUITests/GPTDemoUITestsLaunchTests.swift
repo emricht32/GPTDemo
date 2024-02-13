@@ -16,9 +16,8 @@ final class GPTDemoUITestsLaunchTests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
     }
-
-    /// This test verifies that the app launches correctly and reaches its initial state without issues.
     
+    /// This test verifies that the app launches correctly and reaches its initial state without issues.
     func testLaunch() throws {
         let app = XCUIApplication()
         app.launch()
