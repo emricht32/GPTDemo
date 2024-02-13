@@ -17,17 +17,21 @@ final class GPTDemoTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    /// This test case verifies that the ChatGPT response generator, when provided with a valid prompt, returns a non-null and non-empty response.
+    func testChatGPTResponseIsNotNullOrEmpty() throws {
+        // Assuming there's a `generateResponse` function that takes a String prompt and returns a String response
+        let response = generateResponse("Hello, ChatGPT!")
+        XCTAssertNotNil(response, "The response should not be nil.")
+        XCTAssertFalse(response.isEmpty, "The response should not be empty.")
     }
 
+    /// This performance test measures the round-trip time for a ChatGPT query to be sent and a response received.
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {
+            // Sending a ChatGPT request and waiting for the response.
+            // Assuming generateResponse function takes a String prompt and returns a String response.
+            _ = generateResponse("What's the weather like today?")
             // Put the code you want to measure the time of here.
         }
     }
