@@ -22,10 +22,17 @@ final class GPTDemoUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+    /// This UI test verifies that the app's UI elements are present and interactable upon launch,
+    /// specifically ensuring that a text input field for sending prompts to ChatGPT is available and enabled.
     func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
+
+        // Verifying that the text input field for sending prompts to ChatGPT is present and enabled.
+        let promptTextField = app.textFields["promptTextField"]
+        XCTAssertTrue(promptTextField.exists, "Text input field for ChatGPT prompts should exist.")
+        XCTAssertTrue(promptTextField.isEnabled, "Text input field for ChatGPT prompts should be enabled.")
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
